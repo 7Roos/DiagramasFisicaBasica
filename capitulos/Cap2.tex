@@ -1,0 +1,107 @@
+\begin{tikzpicture}[line width=1.9mm]
+\node[draw,scale=4,fill=yellow!80!black]{Cap.2 \  Força Elétrica};
+\end{tikzpicture} 
+
+
+\begin{tikzpicture}[line width=1.1mm]
+\node[draw,scale=2,fill=blue!20!red]{Ex.5};
+\end{tikzpicture}
+
+\begin{tikzpicture}[line width=0.7mm]
+%o termo entre colchetes acima muda a bitola do vetor
+  \coordinate (v1) at (0,0);
+  \coordinate (v2) at (0,5);
+  \coordinate (v3) at (5,0);
+  % add coordinate at the extension of the line from v1 to v2
+  \coordinate (v2) at ($(v1)!1.2!(v2)$); 
+
+  \draw[-{Latex[length=5mm]}] (v2) -- node[font=\fontsize{16pt}{16pt}\selectfont,right] {$m\vec{g}$} (v1);
+  %o primeiro termo entre colchetes acima, seleciona o tamanho da fonte
+  %já o último termo posiciona a figura
+  \draw[-{Latex[length=5mm]}] (v2) -- node[font=\fontsize{16pt}{16pt}\selectfont,above right] {$\vec{F_{R}}$} (v3);
+  \draw[-{Latex[length=5mm]}] (v3) -- node[font=\fontsize{16pt}{16pt}\selectfont,above] {$\vec{F_{e}}$} (v1);
+
+  % draw line and angle
+  \draw pic [draw,angle radius=7mm,angle eccentricity=1.5, "$\theta$" font=\fontsize{16pt}{16pt}\selectfont,font=\scriptsize, fill=blue!90] {angle=v1--v2--v3};
+\end{tikzpicture}
+
+\begin{tikzpicture}[line width=1.1mm]
+\node[draw,scale=2,fill=blue!20!red]{Ex.6};
+\end{tikzpicture}
+
+\tdplotsetmaincoords{60}{120}
+\begin{tikzpicture}[line width=0.7mm]
+  %eixos
+  \draw[dashed,thick,->] (0,2) -- ( 7,2) node[font=\fontsize{16pt}{16pt}\selectfont,anchor=south]{$x$};
+  \draw[dashed,thick,->] (0,-1) -- ( 0,9) node[font=\fontsize{16pt}{16pt}\selectfont,anchor=west]{$y$};
+  
+  \coordinate (v1) at (-6,0);
+  \coordinate (v2) at (-1,6);
+  \coordinate (v3) at (6,0);
+  % add coordinate at the extension of the line from v1 to v2
+  \coordinate (v2) at ($(v1)!1.2!(v2)$); 
+  \draw (v1) --  (v2) node[font=\fontsize{16pt}{16pt}\selectfont,above right] {$q_{2}$};
+  %o primeiro termo entre colchetes acima, seleciona o tamanho da fonte
+  %já o último termo posiciona a figura
+  \draw (v2) -- node[font=\fontsize{16pt}{16pt}\selectfont,right] {$a$}(v3)node[font=\fontsize{16pt}{16pt}\selectfont,right] {$q_{1}$};
+  \draw  (v3) -- (v1)node[font=\fontsize{16pt}{16pt}\selectfont,left] {$q_{3}$};
+  \draw[dashed,thick,->] (0,2) --node[font=\fontsize{16pt}{16pt}\selectfont,above right] {$\vec{r_{1}}'$} ( v3); 
+  %rótulo das alturas,lados...
+  \draw[ultra thick,|-|] (-8,0) -- node[font=\fontsize{16pt}{16pt}\selectfont,right] {$h$} ( -8,7.3);
+  \put(-29,30){font=\fontsize{16pt}{16pt}\selectfont$h_{1}$};
+  \put(-29,65){font=\fontsize{16pt}{16pt}\selectfont$Q$};
+  \put(-29,140){font=\fontsize{16pt}{16pt}\selectfont$h_{2}$};
+  \put(75,-27){font=\fontsize{16pt}{16pt}\selectfont$\frac{a}{2}$};
+\end{tikzpicture}
+
+\begin{tikzpicture}[line width=1.1mm]
+\node[draw,scale=2,fill=blue!20!red]{Ex.7};
+\end{tikzpicture}
+
+\begin{tikzpicture}[line width=1.9mm]
+%eixos
+  \draw[dashed,thick,->] (-5,0) -- ( 6,0) node[font=\fontsize{16pt}{16pt}\selectfont,anchor=south]{$x$};
+  \draw[dashed,thick,->] (0,0) -- ( 0,7) node[font=\fontsize{16pt}{16pt}\selectfont,anchor=west]{$y$};
+%arco
+   \draw [red,ultra thick,domain=0:180] plot({5*cos(\x)},{5*sin(\x)})node[font=\fontsize{16pt}{16pt}\selectfont,above left] {$Q$};
+%rótulos
+  \filldraw[black] (0,0) circle (2pt) node[font=\fontsize{16pt}{16pt}\selectfont,above left] {$-q$};
+  \draw[thick, green,dashed] (0,0) --node[font=\fontsize{16pt}{16pt}\selectfont,anchor=south]{$a$} ++({5*cos(30)},{5*sin(30)}); 
+  \draw[ultra thick,->] ({5.0*cos(30)},{5.0*sin(30)}) --node[font=\fontsize{16pt}{16pt}\selectfont,above]{$\hat{\rho_{0}}$} ({6.0*cos(30)},{6.0*sin(30)}); 
+  \draw[ultra thick,->] ({5.0*cos(30)},{5.0*sin(30)}) --node[font=\fontsize{16pt}{16pt}\selectfont,above]{$\hat{\phi_{0}}$} ({5.5*sin(30)},{5.5*cos(30)}); 
+% draw line and angle
+  \coordinate (v1) at (0,0);
+  \coordinate (v2) at (5,0);
+  \coordinate (v3) at ({5*cos(30)},{5*sin(30)});
+  \draw pic [draw,angle radius=9mm,angle eccentricity=1.5, "$\phi$" font=\fontsize{16pt}{16pt}\selectfont] {angle=v2--v1--v3};
+  %angle eccentricity mede a distância que o rótulo estará do arco de ângulo
+\end{tikzpicture}
+
+\begin{tikzpicture}[line width=1.1mm]
+\node[draw,scale=2,fill=blue!20!red]{Ex.9};
+\end{tikzpicture}
+
+\begin{tikzpicture}[line width=0.7mm]
+  %eixos
+  \draw[dashed,thick,->] (0,0) -- ( 6,0) node[font=\fontsize{16pt}{16pt}\selectfont,anchor=south]{$x$};
+  \draw[dashed,thick,->] (0,0) -- ( 0,3) node[font=\fontsize{16pt}{16pt}\selectfont,anchor=west]{$y$};
+  
+  \coordinate (v1) at (-5,0);
+  \coordinate (v3) at (5,0);
+  \coordinate (v4) at (-5,-1);
+  \coordinate (v5) at (5,-1);
+  % add coordinate at the extension of the line from v1 to v2
+  \coordinate (v2) at ($(v1)!1.2!(v2)$); 
+  %o primeiro termo entre colchetes acima, seleciona o tamanho da fonte
+  %já o último termo posiciona a figura
+  \draw  (v3) -- (v1)node[font=\fontsize{16pt}{16pt}\selectfont,above] {$q_{2}$};
+  %rótulo das alturas,lados...
+  \put(-20,25){font=\fontsize{16pt}{16pt}\selectfont$y$};
+  \draw[ultra thick,|-|]  (v4) -- node[font=\fontsize{16pt}{16pt}\selectfont,above] {$d$}(v5);
+  \draw[,ultra thick,->] (0,0) -- node[font=\fontsize{16pt}{16pt}\selectfont,right] {$\vec{r_{1}}$}( 0,2)node[font=\fontsize{16pt}{16pt}\selectfont,left] {$-q$};
+  \draw[,ultra thick,->] (0,0) -- node[font=\fontsize{16pt}{16pt}\selectfont,above] {$\vec{r_{1}}'$}(v3)node[font=\fontsize{16pt}{16pt}\selectfont,above] {$q_{1}$};
+  \draw[dashed,ultra thick,->] (0,2) --node[font=\fontsize{16pt}{16pt}\selectfont,above right] {$\vec{r}=\vec{r_{1}} - \vec{r_{1}}'$} ( v3); 
+\end{tikzpicture}
+
+
+
