@@ -1,4 +1,4 @@
-# DiagramasFisicaBasica
+# Diagramas Física Básica
 
 Este repositório tem como objetivo suprir a falta de materiais para figuras usadas na resoluçãod e problemas físicos, seja pra produção de um tutorial ou pra uso pessoal. Aqui estou usando LaTex pra produção delas, sobre tudo da biblioteca Tikz, que nos dá grande liberdade na produção destas figuras. Utilizo como modelo de documento o sitpo "standalone", já importa o ikz como padrão, e cada figura emerge como uma página pdf.
 
